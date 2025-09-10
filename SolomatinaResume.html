@@ -52,7 +52,6 @@
         }
         a:hover {
             color: #0056b3;
-            text-decoration: underline;
         }
         .portfolio-grid {
             display: grid;
@@ -69,6 +68,17 @@
             font-weight: 600;
             color: #343a40;
             margin-bottom: 0.75rem;
+        }
+        .thumbnail-img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        a.thumbnail-link:hover .thumbnail-img {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
         }
     </style>
 </head>
@@ -121,13 +131,22 @@
                     <div class="portfolio-grid">
                         <div class="portfolio-item">
                             <h4>Подкаст (Съемка, монтаж, публикация)</h4>
-                            <a href="https://youtu.be/rA4UQuiATH4?si=c4i76S5btuFozSeA" target="_blank">Смотреть пример</a>
+                            <a href="https://youtu.be/rA4UQuiATH4?si=c4i76S5btuFozSeA" target="_blank" class="text-lg font-medium hover:underline">Смотреть пример</a>
                         </div>
-                        <div class="portfolio-item">
-                            <h4>Примеры обложек</h4>
-                             <a href="https://youtu.be/wEXiYAdOAMA?si=Wr4xP6kiQg8_Azeu" target="_blank">Обложка 1</a><br>
-                             <a href="https://youtu.be/zWlwAeG2FwI?si=VjsYxNrpocyWtRkh" target="_blank">Обложка 2</a><br>
-                             <a href="https://youtu.be/prXZGyerjQg?si=uH_JMSdXnFpI1tYJ" target="_blank">Обложка 3</a>
+                        <!-- NEW IMAGES SECTION -->
+                        <div class="portfolio-item md:col-span-2">
+                             <h4>Примеры обложек</h4>
+                             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-2">
+                                 <a href="https://youtu.be/wEXiYAdOAMA?si=Wr4xP6kiQg8_Azeu" target="_blank" class="thumbnail-link">
+                                     <img src="https://img.youtube.com/vi/wEXiYAdOAMA/hqdefault.jpg" alt="Обложка для YouTube видео" class="thumbnail-img">
+                                 </a>
+                                 <a href="https://youtu.be/zWlwAeG2FwI?si=VjsYxNrpocyWtRkh" target="_blank" class="thumbnail-link">
+                                     <img src="https://img.youtube.com/vi/zWlwAeG2FwI/hqdefault.jpg" alt="Обложка для YouTube видео" class="thumbnail-img">
+                                 </a>
+                                 <a href="https://youtu.be/prXZGyerjQg?si=uH_JMSdXnFpI1tYJ" target="_blank" class="thumbnail-link">
+                                     <img src="https://img.youtube.com/vi/prXZGyerjQg/hqdefault.jpg" alt="Обложка для YouTube видео" class="thumbnail-img">
+                                 </a>
+                             </div>
                         </div>
                     </div>
                 </div>
@@ -138,15 +157,15 @@
                     <div class="portfolio-grid">
                         <div class="portfolio-item">
                             <h4>Съемка и монтаж</h4>
-                            <a href="https://www.instagram.com/reel/DByCwR3NvMC/?igsh=MTNwaHRyNjV4ajRtaA==" target="_blank">Reel 1</a><br>
-                            <a href="https://www.instagram.com/reel/DA1QdrdtkBd/?igsh=N3Q0eGduNWR0azc=" target="_blank">Reel 2</a><br>
-                            <a href="https://www.instagram.com/reel/C_AyY1Ytog9/?igsh=N3VpNW90ZmlhNTN5" target="_blank">Reel 3</a>
+                            <a href="https://www.instagram.com/reel/DByCwR3NvMC/?igsh=MTNwaHRyNjV4ajRtaA==" target="_blank" class="hover:underline">Reel 1</a><br>
+                            <a href="https://www.instagram.com/reel/DA1QdrdtkBd/?igsh=N3Q0eGduNWR0azc=" target="_blank" class="hover:underline">Reel 2</a><br>
+                            <a href="https://www.instagram.com/reel/C_AyY1Ytog9/?igsh=N3VpNW90ZmlhNTN5" target="_blank" class="hover:underline">Reel 3</a>
                         </div>
                         <div class="portfolio-item">
                             <h4>Монтаж</h4>
-                            <a href="https://www.instagram.com/reel/DIzKNT8N98C/?igsh=MTVmb2ZrdWc1eTYxbg==" target="_blank">Reel 4</a><br>
-                            <a href="https://www.instagram.com/reel/DJCFrCPNZ_Z/?igsh=d3NjeGR6OWtxM3d2" target="_blank">Reel 5</a><br>
-                            <a href="https://www.instagram.com/reel/DCwPWoeNL3C/?igsh=ZTBiNm9udHp3ZDNz" target="_blank">Reel 6</a>
+                            <a href="https://www.instagram.com/reel/DIzKNT8N98C/?igsh=MTVmb2ZrdWc1eTYxbg==" target="_blank" class="hover:underline">Reel 4</a><br>
+                            <a href="https://www.instagram.com/reel/DJCFrCPNZ_Z/?igsh=d3NjeGR6OWtxM3d2" target="_blank" class="hover:underline">Reel 5</a><br>
+                            <a href="https://www.instagram.com/reel/DCwPWoeNL3C/?igsh=ZTBiNm9udHp3ZDNz" target="_blank" class="hover:underline">Reel 6</a>
                         </div>
                     </div>
                 </div>
@@ -158,8 +177,8 @@
                         <div class="portfolio-item">
                             <h4>Баннеры для подкаст-студии</h4>
                             <p class="text-gray-600 mb-2">(Мои фото и дизайн)</p>
-                            <a href="https://www.canva.com/design/DAGS_Vig1Io/oyGPV4obZOwgXkxHehwKJw/edit?utm_content=DAGS_Vig1Io&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">Баннер 1</a><br>
-                            <a href="https://www.canva.com/design/DAGS6HE682Y/_VZI0SpsTrLMHuzNlaxKlA/edit?utm_content=DAGS6HE682Y&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">Баннер 2</a>
+                            <a href="https://www.canva.com/design/DAGS_Vig1Io/oyGPV4obZOwgXkxHehwKJw/edit?utm_content=DAGS_Vig1Io&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" class="hover:underline">Баннер 1</a><br>
+                            <a href="https://www.canva.com/design/DAGS6HE682Y/_VZI0SpsTrLMHuzNlaxKlA/edit?utm_content=DAGS6HE682Y&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" class="hover:underline">Баннер 2</a>
                         </div>
                      </div>
                 </div>
@@ -181,3 +200,4 @@
 
 </body>
 </html>
+
