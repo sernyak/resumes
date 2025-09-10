@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Резюме: Соломатина Ирина Васильевна</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f8f9fa;
+        }
+        .card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+        }
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: #343a40;
+            border-bottom: 3px solid #007bff;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .list-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            color: #495057;
+        }
+        .list-item i {
+            color: #007bff;
+            margin-right: 1rem;
+            margin-top: 5px;
+            font-size: 1.1rem;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        .portfolio-item {
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+        }
+        .portfolio-item h4 {
+            font-weight: 600;
+            color: #343a40;
+            margin-bottom: 0.75rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container mx-auto p-4 md:p-8 max-w-5xl">
+        <div class="card">
+            <!-- HEADER -->
+            <header class="text-center mb-12">
+                <h1 class="text-5xl font-bold text-gray-800">Соломатина Ирина Васильевна</h1>
+                <h2 class="text-2xl text-gray-600 mt-2">Личный ассистент</h2>
+                <div class="mt-4">
+                    <a href="https://www.instagram.com/solomatina_iryna?igsh=c281eXRvYmlkcWFy&utm_source=qr" target="_blank" class="text-lg">
+                        <i class="fab fa-instagram"></i> solomatina_iryna
+                    </a>
+                </div>
+            </header>
+
+            <!-- EXPERIENCE -->
+            <section class="mb-10">
+                <h3 class="section-title">Опыт работы</h3>
+                <p class="text-lg text-gray-700">
+                    Работала личным ассистентом у женского коуча <a href="https://www.instagram.com/oleksandra_zhytska?igsh=MW1vZ2MxbWNraHRicg==" target="_blank" class="font-semibold">Александры Жицкой</a>.
+                </p>
+            </section>
+
+            <!-- RESPONSIBILITIES -->
+            <section class="mb-10">
+                <h3 class="section-title">Зона ответственности</h3>
+                <div class="grid md:grid-cols-2 gap-x-8 gap-y-4">
+                    <div class="list-item"><i class="fas fa-check-circle"></i><span>Ведение соцсетей, YouTube, фото/видео съемка, монтаж для YouTube и Instagram.</span></div>
+                    <div class="list-item"><i class="fas fa-check-circle"></i><span>Организация мероприятий (выездной мастермайнд, женская баня, бранчи, открытие подкаст-студии).</span></div>
+                    <div class="list-item"><i class="fas fa-check-circle"></i><span>Организация личных и бизнес-поездок.</span></div>
+                    <div class="list-item"><i class="fas fa-check-circle"></i><span>Выполнение поручений личного характера.</span></div>
+                    <div class="list-item"><i class="fas fa-check-circle"></i><span>Запись и монтаж видеокурсов.</span></div>
+                    <div class="list-item"><i class="fas fa-check-circle"></i><span>Модерация обучающего курса.</span></div>
+                    <div class="list-item"><i class="fas fa-check-circle"></i><span>Создание чат-ботов для Instagram и Telegram.</span></div>
+                    <div class="list-item"><i class="fas fa-check-circle"></i><span>Подготовка материалов для публикации в соцсетях.</span></div>
+                </div>
+            </section>
+
+            <!-- PORTFOLIO -->
+            <section class="mb-10">
+                <h3 class="section-title">Мои работы</h3>
+
+                <!-- YouTube Section -->
+                <div class="mb-8">
+                    <h4 class="text-2xl font-semibold text-gray-700 mb-4 flex items-center"><i class="fab fa-youtube text-red-600 mr-3"></i>YouTube</h4>
+                    <p class="mb-4 text-gray-600"><strong>Экспертиза:</strong> Подготовка видео к публикации (название, теги, описание, тайм-коды, обложки), ведение сообщества, аналитика и разработка стратегии канала.</p>
+                    <div class="portfolio-grid">
+                        <div class="portfolio-item">
+                            <h4>Подкаст (Съемка, монтаж, публикация)</h4>
+                            <a href="https://youtu.be/rA4UQuiATH4?si=c4i76S5btuFozSeA" target="_blank">Смотреть пример</a>
+                        </div>
+                        <div class="portfolio-item">
+                            <h4>Примеры обложек</h4>
+                             <a href="https://youtu.be/wEXiYAdOAMA?si=Wr4xP6kiQg8_Azeu" target="_blank">Обложка 1</a><br>
+                             <a href="https://youtu.be/zWlwAeG2FwI?si=VjsYxNrpocyWtRkh" target="_blank">Обложка 2</a><br>
+                             <a href="https://youtu.be/prXZGyerjQg?si=uH_JMSdXnFpI1tYJ" target="_blank">Обложка 3</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Instagram Section -->
+                <div class="mb-8">
+                    <h4 class="text-2xl font-semibold text-gray-700 mb-4 flex items-center"><i class="fab fa-instagram text-pink-600 mr-3"></i>Instagram Reels</h4>
+                    <div class="portfolio-grid">
+                        <div class="portfolio-item">
+                            <h4>Съемка и монтаж</h4>
+                            <a href="https://www.instagram.com/reel/DByCwR3NvMC/?igsh=MTNwaHRyNjV4ajRtaA==" target="_blank">Reel 1</a><br>
+                            <a href="https://www.instagram.com/reel/DA1QdrdtkBd/?igsh=N3Q0eGduNWR0azc=" target="_blank">Reel 2</a><br>
+                            <a href="https://www.instagram.com/reel/C_AyY1Ytog9/?igsh=N3VpNW90ZmlhNTN5" target="_blank">Reel 3</a>
+                        </div>
+                        <div class="portfolio-item">
+                            <h4>Монтаж</h4>
+                            <a href="https://www.instagram.com/reel/DIzKNT8N98C/?igsh=MTVmb2ZrdWc1eTYxbg==" target="_blank">Reel 4</a><br>
+                            <a href="https://www.instagram.com/reel/DJCFrCPNZ_Z/?igsh=d3NjeGR6OWtxM3d2" target="_blank">Reel 5</a><br>
+                            <a href="https://www.instagram.com/reel/DCwPWoeNL3C/?igsh=ZTBiNm9udHp3ZDNz" target="_blank">Reel 6</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Design Section -->
+                <div>
+                     <h4 class="text-2xl font-semibold text-gray-700 mb-4 flex items-center"><i class="fas fa-palette text-purple-600 mr-3"></i>Дизайн</h4>
+                     <div class="portfolio-grid">
+                        <div class="portfolio-item">
+                            <h4>Баннеры для подкаст-студии</h4>
+                            <p class="text-gray-600 mb-2">(Мои фото и дизайн)</p>
+                            <a href="https://www.canva.com/design/DAGS_Vig1Io/oyGPV4obZOwgXkxHehwKJw/edit?utm_content=DAGS_Vig1Io&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">Баннер 1</a><br>
+                            <a href="https://www.canva.com/design/DAGS6HE682Y/_VZI0SpsTrLMHuzNlaxKlA/edit?utm_content=DAGS6HE682Y&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">Баннер 2</a>
+                        </div>
+                     </div>
+                </div>
+            </section>
+
+            <!-- ABOUT ME -->
+            <section>
+                <h3 class="section-title">О себе</h3>
+                <div class="space-y-4">
+                    <div class="list-item"><i class="fas fa-brain"></i><span>Завершаю курс «НЛП-практик» с планами на дальнейшее обучение.</span></div>
+                    <div class="list-item"><i class="fas fa-heartbeat"></i><span>Ценю здоровье: прошла курсы по нутрициологии, регулярно занимаюсь силовыми тренировками.</span></div>
+                    <div class="list-item"><i class="fas fa-skiing"></i><span>Обожаю горные лыжи и планирую освоить сноуборд.</span></div>
+                    <div class="list-item"><i class="fas fa-camera"></i><span>Увлекаюсь фотографией.</span></div>
+                    <div class="list-item"><i class="fas fa-user-plus"></i><span>Нахожусь в личной терапии, ценю саморазвитие и поддержку психологического здоровья.</span></div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+</body>
+</html>
