@@ -121,20 +121,22 @@
             text-decoration: none;
             cursor: pointer;
         }
-        /* Custom scrollbar for banner */
+        /* Minimalist scrollbar for banner */
+        #banner-scroll-container {
+            overflow-y: hidden; /* Hide vertical scrollbar */
+        }
         #banner-scroll-container::-webkit-scrollbar {
-            height: 8px;
+            height: 5px; /* Make scrollbar thinner */
         }
         #banner-scroll-container::-webkit-scrollbar-track {
-            background: #e9ecef;
-            border-radius: 4px;
+            background: transparent; /* Hide the track */
         }
         #banner-scroll-container::-webkit-scrollbar-thumb {
-            background: #007bff;
-            border-radius: 4px;
+            background-color: rgba(0, 0, 0, 0.2); /* Subtle color for the thumb */
+            border-radius: 10px;
         }
         #banner-scroll-container::-webkit-scrollbar-thumb:hover {
-            background: #0056b3;
+            background-color: rgba(0, 0, 0, 0.4); /* Darker on hover */
         }
     </style>
 </head>
