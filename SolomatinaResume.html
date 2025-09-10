@@ -76,9 +76,50 @@
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        a.thumbnail-link:hover .thumbnail-img {
+        a.thumbnail-link:hover .thumbnail-img, .lightbox-trigger:hover .thumbnail-img {
             transform: scale(1.05);
             box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            padding-top: 60px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.9);
+            cursor: pointer;
+        }
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            animation-name: zoom;
+            animation-duration: 0.3s;
+        }
+        @keyframes zoom {
+            from {transform:scale(0)}
+            to {transform:scale(1)}
+        }
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .modal-close:hover,
+        .modal-close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -127,30 +168,30 @@
                 <!-- YouTube Section -->
                 <div class="mb-8">
                     <h4 class="text-2xl font-semibold text-gray-700 mb-4 flex items-center"><i class="fab fa-youtube text-red-600 mr-3"></i>YouTube</h4>
-                    <p class="mb-4 text-gray-600"><strong>Экспертиза:</strong> Подготовка видео к публикации (название, теги, описание, тайм-коды, обложки), ведение сообщества, аналитика и разработка стратегии канала.</p>
+                    <p class="mb-6 text-gray-600"><strong>Экспертиза:</strong> Подготовка видео к публикации (название, теги, описание, тайм-коды, обложки), ведение сообщества, аналитика и разработка стратегии канала.</p>
                     
                     <!-- Podcast Block - Full Width -->
                     <div class="portfolio-item text-center mb-6">
                         <h4 class="text-xl">Подкаст: съемка, монтаж, обложка, настройка, оптимизация, публикация</h4>
-                        <a href="https://youtu.be/rA4UQuiATH4?si=c4i76S5btuFozSeA" target="_blank" class="thumbnail-link inline-block mt-4 max-w-xs mx-auto">
+                        <a href="https://youtu.be/rA4UQuiATH4" target="_blank" class="thumbnail-link inline-block mt-4 max-w-sm mx-auto">
                             <img src="https://img.youtube.com/vi/rA4UQuiATH4/maxresdefault.jpg" alt="Обложка для подкаста" class="thumbnail-img">
                         </a>
                     </div>
 
-                    <!-- Covers Block -->
+                    <!-- Thumbnails Block -->
                     <div class="portfolio-item">
-                        <h4 class="text-center">Примеры обложек</h4>
-                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-2">
-                           <div>
-                                <img src="images/IMG_3256.PNG" alt="Пример обложки 1" class="thumbnail-img">
-                           </div>
-                           <div>
-                                <img src="images/IMG_3257.PNG" alt="Пример обложки 2" class="thumbnail-img">
-                           </div>
-                           <div>
-                                <img src="images/IMG_3258.PNG" alt="Пример обложки 3" class="thumbnail-img">
-                           </div>
-                        </div>
+                         <h4>Примеры обложек</h4>
+                         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-2">
+                             <a href="images/IMG_3256.png" class="lightbox-trigger">
+                                 <img src="images/IMG_3256.png" alt="Обложка для YouTube видео 1" class="thumbnail-img">
+                             </a>
+                             <a href="images/IMG_3257.png" class="lightbox-trigger">
+                                 <img src="images/IMG_3257.png" alt="Обложка для YouTube видео 2" class="thumbnail-img">
+                             </a>
+                             <a href="images/IMG_3258.png" class="lightbox-trigger">
+                                 <img src="images/IMG_3258.png" alt="Обложка для YouTube видео 3" class="thumbnail-img">
+                             </a>
+                         </div>
                     </div>
                 </div>
 
@@ -161,7 +202,7 @@
                         <div class="portfolio-item">
                             <h4>Съемка и монтаж</h4>
                             <a href="https://www.instagram.com/reel/DByCwR3NvMC/?igsh=MTNwaHRyNjV4ajRtaA==" target="_blank" class="hover:underline">🎥🎬 Reel 1</a><br>
-                            <a href="https://www.instagram.com/reel/DA1QdrdtkBd/?igsh=N3Q0eGduNWR0azc=" target="_blank" class="hover:underline">🎥🎬 Reel 2</a><br>
+                            <a href="https://www.instagram.com/reel/DA1QdrdtkBd/?igsh=N3Q0eGduNWR0azc==" target="_blank" class="hover:underline">🎥🎬 Reel 2</a><br>
                             <a href="https://www.instagram.com/reel/C_AyY1Ytog9/?igsh=N3VpNW90ZmlhNTN5" target="_blank" class="hover:underline">🎥🎬 Reel 3</a>
                         </div>
                         <div class="portfolio-item">
@@ -177,20 +218,21 @@
                 <div>
                      <h4 class="text-2xl font-semibold text-gray-700 mb-4 flex items-center"><i class="fas fa-palette text-purple-600 mr-3"></i>Дизайн</h4>
                      <div class="portfolio-item">
-                        <h4 class="text-center">Баннеры для подкаст-студии</h4>
-                        <p class="text-center text-gray-600 mb-2">(Мои фото и дизайн)</p>
-                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-2">
-                           <div>
-                                <img src="images/banner1.png" alt="Пример баннера 1" class="thumbnail-img">
-                           </div>
-                           <div>
-                                <img src="images/banner2.png" alt="Пример баннера 2" class="thumbnail-img">
-                           </div>
-                           <div>
-                                <img src="images/banner3.png" alt="Пример баннера 3" class="thumbnail-img">
-                           </div>
-                        </div>
-                    </div>
+                         <h4>Баннеры для подкаст-студии</h4>
+                         <p class="text-gray-600 mb-4">(Мои фото и дизайн)</p>
+                         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            <!-- Banners with equal height -->
+                            <a href="images/banner1.png" class="lightbox-trigger">
+                                <img src="images/banner1.png" alt="Баннер 1" class="thumbnail-img h-full object-cover">
+                            </a>
+                            <a href="images/banner2.png" class="lightbox-trigger">
+                                <img src="images/banner2.png" alt="Баннер 2" class="thumbnail-img h-full object-cover">
+                            </a>
+                            <a href="images/banner3.png" class="lightbox-trigger">
+                                <img src="images/banner3.png" alt="Баннер 3" class="thumbnail-img h-full object-cover">
+                            </a>
+                         </div>
+                     </div>
                 </div>
             </section>
 
@@ -208,10 +250,45 @@
         </div>
     </div>
 
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="img01">
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+        var modalImg = document.getElementById("img01");
+
+        // Get all images that should open in the modal
+        var triggers = document.getElementsByClassName("lightbox-trigger");
+
+        for (let i = 0; i < triggers.length; i++) {
+            triggers[i].onclick = function(e) {
+                e.preventDefault(); // Prevent link from opening
+                modal.style.display = "block";
+                modalImg.src = this.href;
+            }
+        }
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("modal-close")[0];
+
+        // When the user clicks on <span> (x) or the modal background, close the modal
+        function closeModal() {
+            modal.style.display = "none";
+        }
+
+        span.onclick = closeModal;
+        modal.onclick = function(event) {
+            // Close if the click is on the dark background, not the image itself
+            if (event.target == modal) {
+                closeModal();
+            }
+        };
+    </script>
+
 </body>
 </html>
-
-
-
-
 
