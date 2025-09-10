@@ -121,6 +121,21 @@
             text-decoration: none;
             cursor: pointer;
         }
+        /* Custom scrollbar for banner */
+        #banner-scroll-container::-webkit-scrollbar {
+            height: 8px;
+        }
+        #banner-scroll-container::-webkit-scrollbar-track {
+            background: #e9ecef;
+            border-radius: 4px;
+        }
+        #banner-scroll-container::-webkit-scrollbar-thumb {
+            background: #007bff;
+            border-radius: 4px;
+        }
+        #banner-scroll-container::-webkit-scrollbar-thumb:hover {
+            background: #0056b3;
+        }
     </style>
 </head>
 <body>
@@ -220,17 +235,19 @@
                      <div class="portfolio-item">
                          <h4>Баннеры для подкаст-студии</h4>
                          <p class="text-gray-600 mb-4">(Мои фото и дизайн)</p>
-                         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 items-start">
+                         <div class="flex gap-4 items-start">
                             <!-- Left Banner -->
-                            <a href="images/banner1.png" class="lightbox-trigger block">
+                            <a href="images/banner1.png" class="lightbox-trigger block w-1/4" id="banner-ref">
                                 <img src="images/banner1.png" alt="Баннер 1" class="thumbnail-img w-full h-auto">
                             </a>
-                            <!-- Middle Banner -->
-                            <a href="images/banner2.png" class="lightbox-trigger block">
-                                <img src="images/banner2.png" alt="Баннер 2" class="thumbnail-img w-full h-auto">
-                            </a>
+                            <!-- Middle Banner (Scrollable Container) -->
+                            <div id="banner-scroll-container" class="w-1/2 rounded-lg overflow-x-auto">
+                                <a href="images/banner2.png" class="lightbox-trigger block h-full">
+                                    <img src="images/banner2.png" alt="Баннер 2" class="thumbnail-img h-full w-auto max-w-none">
+                                </a>
+                            </div>
                             <!-- Right Banner -->
-                            <a href="images/banner3.png" class="lightbox-trigger block">
+                            <a href="images/banner3.png" class="lightbox-trigger block w-1/4">
                                 <img src="images/banner3.png" alt="Баннер 3" class="thumbnail-img w-full h-auto">
                             </a>
                          </div>
@@ -259,36 +276,39 @@
     </div>
 
     <script>
-        // Get the modal
+        // Modal script
         var modal = document.getElementById("myModal");
         var modalImg = document.getElementById("img01");
-
-        // Get all images that should open in the modal
         var triggers = document.getElementsByClassName("lightbox-trigger");
-
         for (let i = 0; i < triggers.length; i++) {
             triggers[i].onclick = function(e) {
-                e.preventDefault(); // Prevent link from opening
+                e.preventDefault();
                 modal.style.display = "block";
                 modalImg.src = this.href;
             }
         }
-
-        // Get the <span> element that closes the modal
         var span = document.getElementsByClassName("modal-close")[0];
-
-        // When the user clicks on <span> (x) or the modal background, close the modal
         function closeModal() {
             modal.style.display = "none";
         }
-
         span.onclick = closeModal;
         modal.onclick = function(event) {
-            // Close if the click is on the dark background, not the image itself
             if (event.target == modal) {
                 closeModal();
             }
         };
+
+        // Banner alignment script
+        function alignBanners() {
+            const refBanner = document.getElementById('banner-ref');
+            const scrollContainer = document.getElementById('banner-scroll-container');
+            if (refBanner && scrollContainer) {
+                const refHeight = refBanner.offsetHeight;
+                scrollContainer.style.height = `${refHeight}px`;
+            }
+        }
+        window.addEventListener('load', alignBanners);
+        window.addEventListener('resize', alignBanners);
     </script>
 
 </body>
