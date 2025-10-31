@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пропозиція для LnD Group - Ірина Соломатіна</title>
+    <!-- Підключення Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Підключення шрифту Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7fa; /* Як у прикладі */
+        }
+        /* Стилізація посилань-прикладів */
+        .example-link {
+            transition: all 0.2s ease-in-out;
+        }
+        .example-link:hover {
+            background-color: #d1fae5; /* Світло-смарагдовий */
+            color: #065f46; /* Темно-смарагдовий */
+        }
+        /* Стиль для підкреслення заголовків секцій */
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: #10b981; /* Смарагдовий акцент */
+            margin-top: 8px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        /* -- Нові стилі для модального вікна -- */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 999;
+            display: none; /* Ховаємо за замовчуванням */
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+        }
+        .modal-content {
+            position: relative;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 90vw;
+            max-height: 90vh;
+        }
+        .modal-content img {
+            max-width: 100%;
+            max-height: calc(90vh - 100px); /* (90vh - padding - buttons) */
+            object-fit: contain;
+        }
+        .modal-close {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            background: #fff;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            cursor: pointer;
+            border: 1px solid #ccc;
+            z-index: 1001;
+        }
+        .modal-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+            user-select: none;
+            z-index: 1000;
+        }
+        /* Адаптація для мобільних */
+        @media (max-width: 768px) {
+            .modal-nav {
+                width: 35px;
+                height: 35px;
+                font-size: 20px;
+            }
+            .modal-prev { left: 5px; }
+            .modal-next { right: 5px; }
+            .modal-content {
+                padding: 10px;
+            }
+        }
+        @media (min-width: 769px) {
+            .modal-prev { left: -50px; }
+            .modal-next { right: -50px; }
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Основний контейнер -->
+    <div class="container mx-auto max-w-5xl px-4 py-12 md:py-20">
+
+        <!-- Секція-заголовок (Hero) - Оновлено -->
+        <header class="text-center mb-12 md:mb-16">
+            <h1 class="text-5xl md:text-6xl font-extrabold text-[#05445E] mb-4">
+                Ірина Соломатіна
+            </h1>
+            <p class="text-xl md:text-2xl font-light text-gray-700">
+                Спеціаліст з Креативного Контенту та Digital-Рішень
+            </p>
+        </header>
+
+        <!-- Вступний блок - Оновлено -->
+        <section class="bg-white p-8 rounded-xl shadow-lg mb-12 text-center">
+            <h2 class="text-3xl md:text-4xl font-semibold text-[#05445E] mb-4">
+                Чим я можу бути корисна LnD Group
+            </h2>
+            <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+                Мій підхід — це поєднання креативності та системності. Я готова взяти на себе повний цикл створення контенту: від ідеї та зйомки до фінального монтажу, публікації та аналізу ефективності. Моя мета — допомогти LnD Group посилити свій бренд та залучити нову аудиторію через якісний та експертний контент.
+            </p>
+        </section>
+
+        <!-- Секція "Мої Послуги" - Оновлено -->
+        <section>
+            <h3 class="text-3xl font-semibold text-center text-[#05445E] mb-10 section-title">
+                Ключові напрямки співпраці
+            </h3>
+
+            <!-- Сітка послуг - Оновлено -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+
+                <!-- Картка 1: Відео-продакшн (Reels) -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border-t-4 border-[#10b981] flex flex-col">
+                    <div class="text-4xl mb-3">📱</div>
+                    <h4 class="text-2xl font-semibold text-[#05445E] mb-4">Відео-продакшн: Reels</h4>
+                    <ul class="space-y-2 text-gray-700 list-disc list-inside flex-grow">
+                        <li>Повний цикл: зйомка, динамічний монтаж.</li>
+                        <li>Корекція кольору та робота зі звуком.</li>
+                        <li>Накладання титрів для максимального залучення.</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2 mt-4">
+                        <a href="https://www.instagram.com/reel/DByCwR3NvMC/?igsh=MTNwaHRyNjV4ajRtaA==" target="_blank" rel="noopener noreferrer" class="example-link bg-emerald-50 text-emerald-800 px-3 py-1 rounded-full text-sm font-medium">
+                            Зйомка + монтаж
+                        </a>
+                        <a href="https://www.instagram.com/reel/DKKyiciNjco/?igsh=MjVpc3FrYjI1Y250" target="_blank" rel="noopener noreferrer" class="example-link bg-emerald-50 text-emerald-800 px-3 py-1 rounded-full text-sm font-medium">
+                            Монтаж 1
+                        </a>
+                        <a href="https://www.instagram.com/reel/DQcbUL1iLHP/?igsh=MXg1eWY3bGIzNGxkdQ==" target="_blank" rel="noopener noreferrer" class="example-link bg-emerald-50 text-emerald-800 px-3 py-1 rounded-full text-sm font-medium">
+                            Монтаж 2
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Картка 2: YouTube та Подкасти -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border-t-4 border-red-500 flex flex-col">
+                    <div class="text-4xl mb-3">🎬</div>
+                    <h4 class="text-2xl font-semibold text-[#05445E] mb-4">YouTube та Подкасти</h4>
+                    <ul class="space-y-2 text-gray-700 list-disc list-inside flex-grow">
+                        <li>Зйомка та монтаж подкастів, експертних інтерв'ю.</li>
+                        <li>Створення "чіпляючих" обкладинок з урахуванням CTR.</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2 mt-4">
+                        <a href="https://youtu.be/rA4UQuiATH4?si=uVEwH_jWSpNg1YgC" target="_blank" rel="noopener noreferrer" class="example-link bg-red-50 text-red-800 px-3 py-1 rounded-full text-sm font-medium hover:bg-red-100 hover:text-red-900">
+                            Приклад (Подкаст)
+                        </a>
+                        <!-- Оновлена кнопка для обкладинок -->
+                        <button id="openCoversModal" class="example-link bg-red-50 text-red-800 px-3 py-1 rounded-full text-sm font-medium hover:bg-red-100 hover:text-red-900">
+                            Обкладинки (Приклад)
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Картка 3: Ведення YouTube -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border-t-4 border-red-500 flex flex-col">
+                    <div class="text-4xl mb-3">🚀</div>
+                    <h4 class="text-2xl font-semibold text-[#05445E] mb-4">Ведення YouTube "під ключ"</h4>
+                    <ul class="space-y-2 text-gray-700 list-disc list-inside flex-grow">
+                        <li>Публікація відео та адміністрування каналу.</li>
+                        <li>SEO-оптимізація: назви, описи, теги.</li>
+                        <li>Прописування тайм-кодів для зручної навігації.</li>
+                    </ul>
+                </div>
+
+                <!-- Картка 4: SMM та Візуал -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border-t-4 border-blue-500 flex flex-col">
+                    <div class="text-4xl mb-3">✨</div>
+                    <h4 class="text-2xl font-semibold text-[#05445E] mb-4">SMM та Візуальна Стратегія</h4>
+                    <ul class="space-y-2 text-gray-700 list-disc list-inside flex-grow">
+                        <li>Створення єдиного візуального стилю для сторінки.</li>
+                        <li>Підвищення впізнаваності бренду.</li>
+                        <li>Налаштування та запуск таргетованої реклами.</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2 mt-4">
+                        <a href="https://www.instagram.com/p/DP3p8dbiMnb/?img_index=1&igsh=cm93eXJiZmJuZ21w" target="_blank" rel="noopener noreferrer" class="example-link bg-blue-50 text-blue-800 px-3 py-1 rounded-full text-sm font-medium hover:bg-blue-100 hover:text-blue-900">
+                            Приклад (Візуал)
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Картка 5: Фото-контент -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border-t-4 border-purple-500 flex flex-col">
+                    <div class="text-4xl mb-3">📸</div>
+                    <h4 class="text-2xl font-semibold text-[#05445E] mb-4">Професійна Фотозйомка</h4>
+                    <ul class="space-y-2 text-gray-700 list-disc list-inside flex-grow">
+                        <li>Створення якісних фото для соцмереж та сайтів.</li>
+                        <li>Підкреслення експертності та цінностей бренду.</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2 mt-4">
+                        <a href="https://www.instagram.com/p/DLsEdxztPIdzRlh4LQ9bOXd6psfmJgkIWJLLUg0/?igsh=cmYzaTl3aGFnenpp" target="_blank" rel="noopener noreferrer" class="example-link bg-purple-50 text-purple-800 px-3 py-1 rounded-full text-sm font-medium hover:bg-purple-100 hover:text-purple-900">
+                            Фото 1
+                        </a>
+                        <a href="https://www.instagram.com/p/DLz9GtwNq5h7j6knIsqAUeb7v2ocDvtKqIF-ZE0/?igsh=czA5NzE1anczYTN4" target="_blank" rel="noopener noreferrer" class="example-link bg-purple-50 text-purple-800 px-3 py-1 rounded-full text-sm font-medium hover:bg-purple-100 hover:text-purple-900">
+                            Фото 2
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Картка 6: E-learning -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border-t-4 border-yellow-500 flex flex-col">
+                    <div class="text-4xl mb-3">🎓</div>
+                    <h4 class="text-2xl font-semibold text-[#05445E] mb-4">Супровід Онлайн-Курсів</h4>
+                    <ul class="space-y-2 text-gray-700 list-disc list-inside flex-grow">
+                        <li>Запис та монтаж уроків (досвід з PROYAV).</li>
+                        <li>Завантаження на освітні платформи.</li>
+                        <li>Подальша модерація курсу.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Додаткова експертиза - Оновлено -->
+        <section class="my-12 md:my-16">
+             <div class="bg-white p-8 rounded-xl shadow-lg md:flex md:items-center md:gap-8 border-l-8 border-[#10b981]">
+                <!-- Іконка -->
+                <div class="text-6xl md:text-7xl text-center mb-4 md:mb-0 shrink-0">
+                    🍏
+                </div>
+                <!-- Текст -->
+                <div class="md:text-left text-center">
+                    <h3 class="text-3xl font-semibold text-[#05445E] mb-3">
+                        Додаткова експертиза: Wellness
+                    </h3>
+                    <p class="text-lg text-gray-700">
+                        Я також пройшла навчання з нутриціології. Можу розрахувати КБЖВ та скласти індивідуальний план харчування, що може бути корисно для розробки контенту у сфері wellness та здорового способу життя.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Заклик до дії (CTA) - Оновлено -->
+        <footer class="mt-12 md:mt-20 text-center border-t border-gray-200 pt-10">
+            <h3 class="text-3xl font-semibold text-[#05445E] mb-4">
+                Готова до співпраці
+            </h3>
+            <p class="text-lg text-gray-700 max-w-2xl mx-auto mb-8">
+                Буду рада обговорити, як мої навички та досвід можуть бути інтегровані в проєкти LnD Group. Давайте створимо щось вартісне разом!
+            </p>
+            <a href="https://t.me/solomatina_i" target="_blank" rel="noopener noreferrer"
+               class="inline-block bg-[#10b981] text-white font-bold py-3 px-10 rounded-lg text-lg hover:bg-[#0f966d] transition-all duration-300 transform hover:scale-105 shadow-lg">
+                Зв'язатися в Telegram
+            </a>
+        </footer>
+
+    </div>
+
+    <!-- -- Нова структура модального вікна -- -->
+    <div id="imageModal" class="modal-overlay">
+        <div class="modal-content">
+            <img id="modalImage" src="" alt="Приклад обкладинки">
+            <div id="modalClose" class="modal-close">X</div>
+            <div id="modalPrev" class="modal-nav modal-prev">&lt;</div>
+            <div id="modalNext" class="modal-nav modal-next">&gt;</div>
+        </div>
+    </div>
+
+    <!-- -- Новий блок скриптів -- -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Елементи модального вікна
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            const openBtn = document.getElementById('openCoversModal');
+            const closeBtn = document.getElementById('modalClose');
+            const nextBtn = document.getElementById('modalNext');
+            const prevBtn = document.getElementById('modalPrev');
+
+            // Список зображень
+            const coverImages = [
+                'images/IMG_3256.PNG',
+                'images/IMG_3257.PNG',
+                'images/IMG_3258.PNG',
+                'images/IMG_3259.PNG'
+            ];
+            let currentImageIndex = 0;
+
+            // Функція оновлення зображення
+            function showImage(index) {
+                modalImg.src = coverImages[index];
+                currentImageIndex = index;
+            }
+
+            // Функція відкриття
+            function openModal(index) {
+                showImage(index);
+                modal.style.display = 'flex';
+            }
+
+            // Функція закриття
+            function closeModal() {
+                modal.style.display = 'none';
+            }
+
+            // Наступне зображення
+            function showNext() {
+                let nextIndex = (currentImageIndex + 1) % coverImages.length;
+                showImage(nextIndex);
+            }
+
+            // Попереднє зображення
+            function showPrev() {
+                let prevIndex = (currentImageIndex - 1 + coverImages.length) % coverImages.length;
+                showImage(prevIndex);
+            }
+
+            // Прив'язка подій
+            if(openBtn) {
+                openBtn.addEventListener('click', () => openModal(0));
+            }
+            if(closeBtn) {
+                closeBtn.addEventListener('click', closeModal);
+            }
+            if(modal) {
+                modal.addEventListener('click', (e) => {
+                    // Закриваємо по кліку на темний фон (overlay)
+                    if (e.target === modal) {
+                        closeModal();
+                    }
+                });
+            }
+            if(nextBtn) {
+                nextBtn.addEventListener('click', showNext);
+            }
+            if(prevBtn) {
+                prevBtn.addEventListener('click', showPrev);
+            }
+
+            // Навігація клавішами
+            document.addEventListener('keydown', (e) => {
+                if (modal && modal.style.display === 'flex') {
+                    if (e.key === 'ArrowRight') {
+                        showNext();
+                    } else if (e.key === 'ArrowLeft') {
+                        showPrev();
+                    } else if (e.key === 'Escape') {
+                        closeModal();
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
