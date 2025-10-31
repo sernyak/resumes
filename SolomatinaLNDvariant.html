@@ -193,13 +193,17 @@
             content += '<h2 style="font-size: 1.5em; margin-bottom: 20px; color: #05445E; text-align: center;">Приклади Обкладинок YouTube</h2>';
             
             images.forEach((img) => {
-                // *** ВИПРАВЛЕННЯ: Тепер використовуємо відносний шлях, який вимагається на GitHub ***
+                // Використовуємо відносний шлях, який вимагається на GitHub
                 const imageUrl = `images/${img}`; 
                 
                 content += `
                     <div style="margin-bottom: 30px; text-align: center; border: 1px solid #ddd; padding: 15px; border-radius: 8px; background-color: white; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                        <img src="${imageUrl}" alt="${img}" style="width: 100%; height: auto; display: block; margin: 0 auto; border-radius: 4px;">
-                        <p style="margin-top: 10px; font-size: 0.9em; color: #777;">Очікуваний файл: ${img}</p>
+                        <img 
+                            src="${imageUrl}" 
+                            alt="Обкладинка YouTube: ${img}" 
+                            style="width: 100%; height: auto; display: block; margin: 0 auto; border-radius: 4px;"
+                            onerror="this.onerror=null; this.src='https://placehold.co/480x270/FF5733/FFFFFF?text=Error:+${img} (Перевірте+шлях)'"
+                        >
                     </div>
                 `;
             });
