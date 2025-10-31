@@ -186,21 +186,20 @@
         function showThumbnails(event) {
             event.preventDefault(); // Запобігаємо переходу за посиланням
 
-            // Список імен файлів, які ви надали. Вони будуть шукатися в папці 'images/' на GitHub.
+            // Список імен файлів, які ви надали.
             const images = ['IMG_3256.PNG', 'IMG_3257.PNG', 'IMG_3258.PNG', 'IMG_3259.PNG'];
             
             let content = '<div style="max-width: 500px; margin: 0 auto;">';
             content += '<h2 style="font-size: 1.5em; margin-bottom: 20px; color: #05445E; text-align: center;">Приклади Обкладинок YouTube</h2>';
             
             images.forEach((img) => {
-                // Оскільки реальні зображення не можуть бути відображені в цьому середовищі,
-                // використовуємо заповнювач, але з URL, який імітує структуру GitHub.
-                // Після розміщення на GitHub, замість placeholderUrl має бути реальний URL до images/${img}
-                const placeholderUrl = `https://placehold.co/480x270/2E86C1/FFFFFF?text=${encodeURIComponent(img)}`;
+                // *** ВИПРАВЛЕННЯ: Тепер використовуємо відносний шлях, який вимагається на GitHub ***
+                const imageUrl = `images/${img}`; 
                 
                 content += `
                     <div style="margin-bottom: 30px; text-align: center; border: 1px solid #ddd; padding: 15px; border-radius: 8px; background-color: white; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                        <img src="${placeholderUrl}" alt="${img}" style="width: 100%; height: auto; display: block; margin: 0 auto; border-radius: 4px;">
+                        <img src="${imageUrl}" alt="${img}" style="width: 100%; height: auto; display: block; margin: 0 auto; border-radius: 4px;">
+                        <p style="margin-top: 10px; font-size: 0.9em; color: #777;">Очікуваний файл: ${img}</p>
                     </div>
                 `;
             });
